@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div *ngIf="isLogged, then loggedNav else unloggedNav"></div>
+      <ng-template #loggedNav>
+        <a mat-button class="mx-3 px-3" routerLink="/home">Home</a>
+        <a mat-button class="px-4" routerLink="/jeux">Jeux</a>
+        <a mat-button class="px-4" routerLink="/mangas">Mangas</a>
+        <a mat-button class="px-4" routerLink="/goodies">Goodies</a>
+        <span class="headerSpacer"></span>
+        <mat-form-field class="headerComponent">
+          <button matSuffix mat-button><mat-icon>search</mat-icon></button>
+          <input type="tel" matInput placeholder="Search">
+        </mat-form-field>
+        <a mat-stroked-button color="#f5f5f5" class="px-4 rounded-pill" routerLink="/account">Mon compte</a>
+      </ng-template>
+      <ng-template #unloggedNav>
+
+      </ng-template>
+  </mat-toolbar-row>
+</mat-toolbar>
